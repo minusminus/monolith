@@ -1,0 +1,21 @@
+;na koncowe tlo [na kule]
+
+	mov   edi,temp_seg1
+	mov   al,1
+	mov   esi, o PlasmaPoint8
+	call  MakePlasma
+
+	mov   edi,temp_seg3
+	mov   al, 128
+	mov   esi, o PlasmaPoint1
+	call  MakePlasma
+
+
+	mov   edi,txt0
+	mov   esi,temp_seg1
+	mov   edx,000ff03h
+	call  MakeTrueTexture
+
+	mov   esi,txt0
+	mov   ecx,20 ;9
+	call  GfxFX_Blur
