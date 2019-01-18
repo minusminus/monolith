@@ -1,0 +1,16 @@
+;textura na greetsy [efekt bitmapowy]
+
+	mov   edi,temp_seg1
+	mov   al,1
+	mov   si, offset PlasmaPoint1
+	call  MakePlasma
+
+	mov   edi,temp_seg3
+	mov   al, 128
+	mov   si, offset PlasmaPoint2
+	call  MakePlasma
+
+	mov   edi,tex2
+	mov   esi,temp_seg1
+	mov   edx,000ff03h
+	call  MakeTrueTexture

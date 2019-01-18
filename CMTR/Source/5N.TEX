@@ -1,0 +1,18 @@
+;lepsza do tunelu niz tex.1
+
+	mov   edi,temp_seg1
+	mov   al,128
+	mov   esi,offset PlasmaPoint4
+	call  MakePlasma
+
+	mov   edi,temp_seg2
+	mov   al,128
+	mov   esi,offset PlasmaPoint1
+	call  MakePlasma
+
+	mov   edi,tex1
+	mov   esi,temp_seg1
+;	 mov   edx,0010f10h
+	mov dl,110b
+	call  MakeTrueTexture
+

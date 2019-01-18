@@ -1,0 +1,22 @@
+mov edi,txt0
+;mov eax,0ffff00h	;\na obiekt
+;mov edx,0ffa400h	;/
+mov edx,0ffh
+mov eax,07fh
+
+mov ebx,32
+outlup:
+mov ecx,32*8
+inlup:
+mov ebp,32
+ininlup:
+mov [edi],eax
+add edi,4
+dec ebp
+jnz ininlup
+xchg edx,eax
+dec ecx
+jnz inlup
+xchg eax,edx
+dec ebx
+jnz outlup
