@@ -1,0 +1,8 @@
+deus3d.lib
++test.obj
++vesa32.obj
++bsort.obj
++memory.obj
++flat.obj
++tex.obj
++drawtr.obj
