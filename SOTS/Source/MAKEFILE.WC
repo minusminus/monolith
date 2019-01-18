@@ -1,0 +1,23 @@
+# Compilers and options:
+
+MIDASDIR = .\midas
+LIBDIR = $(MIDASDIR)
+MIDASINCS = $(MIDASDIR)\include
+MIDASLIB = midas.lib zlib.lib libpng.lib
+
+CC = wcc386
+#CCOPTS = -w3 -d2 -fpi87 -fp5 -zdp -zu -bt=dos -i$(MIDASINCS) -dDEBUG
+CCOPTS = -fpi87 -fp5 -zdp -zu -bt=dos -oneatx -s
+
+# Remove "-fpi87 -fp5" if you don't want to require an FPU
+
+FILES = deus.obj vesa32.obj
+
+deus.exe :     deus.obj $(MIDASLIB)
+#	 wlink system dos4g file { $(FILES) } library { $(MIDASLIB) } option caseexact
+#	 del deus.obj
+
+deus.obj :	deus.c
+	$(CC) deus.c $(CCOPTS)
+
+

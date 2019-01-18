@@ -1,0 +1,28 @@
+CPP_=wpp386
+OPT_= -fpi87 -fp5 -5r -ox -s -mf
+LINK=wcl386 -ox -d2 -hw
+OBJECTS=test.obj bsort.obj memory.obj flat.obj tex.obj drawtr.obj
+
+deus3d.lib : $(OBJECTS)
+	   del deus3d.lib
+	   wlib @mfile.lbc
+	   del test.obj
+
+
+test.obj :
+		$(CPP_) $(OPT_) test.cpp
+
+point.obj :
+		tasm /m/r/p point.asm
+
+bsort.obj :
+		tasm /m/r/p bsort.asm
+
+flat.obj :
+		tasm /m/r/p flat.asm
+
+drawtr.obj :
+		tasm /m/r/p drawtr.asm
+
+tex.obj :
+		tasm /m/r/p tex.asm

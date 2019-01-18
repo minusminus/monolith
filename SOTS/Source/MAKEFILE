@@ -1,0 +1,16 @@
+# Compilers and options:
+CPP_=wpp386
+OPT_= -fpi87 -fp5 -5r -ox -s -mf -zdp -zu
+LINK=wcl386 -ox -x
+OBJECTS=deus.obj vesa32.obj memory.obj libpng.lib zlib.lib midas.lib deus3d.lib bufor.obj
+
+
+
+deus.exe : $(OBJECTS)
+		$(LINK) $(OBJECTS)
+		del deus.obj
+
+deus.obj :
+		$(CPP_) $(OPT_) deus.cpp
+
+

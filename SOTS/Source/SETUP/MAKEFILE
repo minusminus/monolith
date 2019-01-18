@@ -1,0 +1,24 @@
+# Compilers and options:
+
+MIDASDIR = ..\midas
+LIBDIR = $(MIDASDIR)
+MIDASINCS = $(MIDASDIR)\include
+MIDASLIB = $(LIBDIR)\midas.lib
+
+CC = wcc386
+#CCOPTS = -w3 -d2 -fpi87 -fp5 -zdp -zu -bt=dos -i$(MIDASINCS) -dDEBUG
+CCOPTS = -w3 -fpi87 -fp5 -zdp -zu -bt=dos -i$(MIDASINCS) -oneatx -s
+
+# Remove "-fpi87 -fp5" if you don't want to require an FPU
+
+
+all : setup.exe
+
+setup.exe :	 setup.obj $(MIDASLIB)
+	wlink system dos4g file setup library $(MIDASLIB) option caseexact
+	del setup.obj
+
+setup.obj :	 setup.c vga.h
+	$(CC) setup.c $(CCOPTS)
+
+
