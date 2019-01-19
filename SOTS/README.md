@@ -1,4 +1,5 @@
-# Simplicity of the statement by Monolith crew coders for Deus Ex Machina Records
+# Simplicity of the statement 
+##### Monolith crew coders for Deus Ex Machina Records
 
 This is Deus.Rec borntro. Released somewhere in 2000.
 
